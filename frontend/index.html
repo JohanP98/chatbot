@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat EAN</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>Historial</h2>
+        </div>
+
+        <ul id="chatHistory" class="history-list"></ul>
+        <button id="newChatBtn" class="new-chat-btn">+ Nuevo Chat</button>
+    </aside>
+
+    <main class="main">
+
+        <header class="navbar">
+            <p>Ecuaciones Diferenciales</p>
+            <div class ="profile-icon-container">
+                <img src="assets/icons/PROFILE IMAGE.png" class="profile-icon">
+                <div class="profile-icon-menu">
+                    <button class="logout-btn">Cerrar sesión</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="chatContainer" class="chat-container"></section>
+
+        <footer class="input-area">
+            <form id="chat-form" onsubmit="return false;">
+                <button type="button" id="img-input">📎</button>
+                <input type="file" id="img-upd" accept="image/*" style="display:none;" />
+                <textarea id="user-input" placeholder="Escribe tu mensaje..." rows="1"></textarea>
+                <button type="button" id="send-btn">➤</button>
+            </form>
+        </footer>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

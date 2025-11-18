@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header h2 {
+    align-items: right;
+    font-size: 18px;
+    color: #333;
+}
+
+#newChatBtn {
+    margin: 10px;
+    padding: 10px;
+    background: #40A937;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.history-list {
+    list-style: none;
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.history-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+    color: #444;
+}
+
+.history-list li:hover {
+    background: #eaeaea;
+}
+
+.sidebar-footer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-icon {
+    width: 40px;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.profile-icon-container {
+    position: relative;
+}
+
+.profile-icon-menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 5px;
+    top: 35px;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.profile-icon-menu.active {
+    display: block;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-ean {
+    height: 40px;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    width: 120px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: #40A937; 
+    border-radius: 50%;
+}
+
+
+.chat-container {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Esto es del logo de fondo en el chat*/
+#chatContainer::before {
+    content: "";
+    position:absolute;
+    inset: 0;
+    background: url('../img/LOGO\ EAN.png') center center / cover no-repeat;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Mensajes del input, del bot, y del usuario en el contenedor*/
+.message {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    max-width: 60%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.user-msg {
+    background: #40A937;
+    color: white;
+    margin-left: auto;
+}
+
+.bot-msg {
+    background: #e6e6e6;
+    color: #333;
+}
+
+
+.input-area {
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    width: 100%;
+    min-height: 40px;
+    max-height: 150px;
+    resize: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+
+#send-btn {
+    background: #40A937;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+#img-input {
+    background: #f1f5f7;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+/* css del login.html, no cambiarlo por ahora*/
+
+body.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.login-btn {
+    padding: 12px;
+    background: #40A937;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: #36972f;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
